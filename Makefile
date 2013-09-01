@@ -46,3 +46,4 @@ clean:
 	rm -rf html .figleaf coverage.lst # figleaf
 	rm -rf htmlcov .coverage # coverage
 	rm -rf test/__pycache__ # pytest
+	rm -r markdown_checklist.egg-info || true

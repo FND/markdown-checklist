@@ -23,6 +23,12 @@ becomes
 * both upper- and lowercase "x" are accepted to activate checkboxes
 
 
+Installation
+------------
+
+    $ pip install markdown-checklist
+
+
 Usage
 -----
 
