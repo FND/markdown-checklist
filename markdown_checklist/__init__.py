@@ -34,4 +34,4 @@ class ChecklistPreprocessor(Preprocessor):
     def _replacer(self, match):
         list_prefix, state = match.groups()
         checked = ' checked' if state != ' ' else ''
-        return '%s <input type="checkbox" readonly%s>' % (list_prefix, checked)
+        return '%s <input type="checkbox" disabled%s>' % (list_prefix, checked)
