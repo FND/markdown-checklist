@@ -1,6 +1,6 @@
 from markdown import markdown
 
-from markdown_checklist.extension import ChecklistExtension
+from mdx_checklist import *
 
 
 def test_checklists():
@@ -39,7 +39,7 @@ lorem ipsum
     html = markdown(source, extensions=[ChecklistExtension()])
     assert html == expected
 
-    html = markdown(source, extensions=['markdown_checklist.extension'])
+    html = markdown(source, extensions=['checklist'])
     assert html == expected
 
 
@@ -55,7 +55,7 @@ Hello World
 lorem ipsum
     """.strip()
 
-    html = markdown(source, extensions=['markdown_checklist.extension'])
+    html = markdown(source, extensions=['checklist'])
     assert html == """
 <h1>Hello World</h1>
 <ul>

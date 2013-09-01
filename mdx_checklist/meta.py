@@ -1,4 +1,4 @@
-"""
+DESC = """
 [Markdown Checklist](https://github.com/FND/markdown-checklist)
 
 a [Python Markdown](http://pythonhosted.org/Markdown/) extension for lists of
@@ -33,15 +33,15 @@ Usage
 -----
 
     import markdown
-    html = markdown.markdown(source, extensions=['markdown_checklist.extension'])
+    html = markdown.markdown(source, extensions=['checklist'])
 
 or
 
     import markdown
-    from markdown_checklist.extension import ChecklistExtension
+    from mdx_checklist import ChecklistExtension
     html = markdown.markdown(source, extensions=[ChecklistExtension()])
 """
 
-__version__ = '0.1.0'
-__author__ = 'FND'
-__license__ = 'MIT'
+VERSION = '0.1.0'
+AUTHOR = 'FND'
+LICENSE = 'MIT'
