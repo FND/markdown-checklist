@@ -1,4 +1,5 @@
-Markdown Checklist
+[Markdown Checklist](https://github.com/FND/markdown-checklist)
+[![build status](https://secure.travis-ci.org/FND/markdown-checklist.png)](http://travis-ci.org/FND/markdown-checklist)
 
 a [Python Markdown](http://pythonhosted.org/Markdown/) extension for lists of
 tasks with checkboxes
