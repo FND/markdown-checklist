@@ -1,0 +1,7 @@
+Markdown Checklist
+
+a [Python Markdown](http://pythonhosted.org/Markdown/) extension for lists of
+tasks with checkboxes
+
+inspired by
+[GitHub task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
