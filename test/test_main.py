@@ -1,6 +1,6 @@
 import markdown
 
-from markdown_checklist import ChecklistExtension
+from markdown_checklist.extension import ChecklistExtension
 
 
 def test_checkbox():
