@@ -38,7 +38,7 @@ Usage
 or
 
     import markdown
-    from mdx_checklist.extension import ChecklistExtension
+    from mdx_checklist import ChecklistExtension
     html = markdown.markdown(source, extensions=[ChecklistExtension()])
 """
 
