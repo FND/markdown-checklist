@@ -1,9 +1,9 @@
-import markdown
+from markdown import markdown
 
 from markdown_checklist.extension import ChecklistExtension
 
 
-def test_checkbox():
+def test_checklists():
     source = """
 Hello World
 ===========
@@ -15,7 +15,7 @@ Hello World
 lorem ipsum
     """.strip()
 
-    html = markdown.markdown(source)
+    html = markdown(source)
     assert html == """
 <h1>Hello World</h1>
 <ul>
@@ -36,8 +36,32 @@ lorem ipsum
 <p>lorem ipsum</p>
     """.strip()
 
-    html = markdown.markdown(source, extensions=[ChecklistExtension()])
+    html = markdown(source, extensions=[ChecklistExtension()])
     assert html == expected
 
-    html = markdown.markdown(source, extensions=['markdown_checklist.extension'])
+    html = markdown(source, extensions=['markdown_checklist.extension'])
     assert html == expected
+
+
+def test_syntax_variations():
+    source = """
+Hello World
+===========
+
+- [x] foo
+- [ ] bar
+- [X] baz
+
+lorem ipsum
+    """.strip()
+
+    html = markdown(source, extensions=['markdown_checklist.extension'])
+    assert html == """
+<h1>Hello World</h1>
+<ul>
+<li><input type="checkbox" disabled checked> foo</li>
+<li><input type="checkbox" disabled> bar</li>
+<li><input type="checkbox" disabled checked> baz</li>
+</ul>
+<p>lorem ipsum</p>
+    """.strip()

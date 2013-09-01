@@ -2,6 +2,7 @@
 
 readme:
 	python -c "import markdown_checklist as cl; print cl.__doc__.strip()" > README
+	sed -i "2i[![build status](https://secure.travis-ci.org/FND/markdown-checklist.png)](http://travis-ci.org/FND/markdown-checklist)" README
 
 test: clean
 	py.test -s --tb=short test
