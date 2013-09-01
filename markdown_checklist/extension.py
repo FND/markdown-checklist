@@ -4,6 +4,10 @@ from markdown.extensions import Extension
 from markdown.preprocessors import Preprocessor
 
 
+def makeExtension(configs=None):
+    return ChecklistExtension(configs=configs)
+
+
 class ChecklistExtension(Extension):
 
     def extendMarkdown(self, md, md_globals):

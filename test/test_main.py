@@ -26,8 +26,7 @@ lorem ipsum
 <p>lorem ipsum</p>
     """.strip()
 
-    html = markdown.markdown(source, extensions=[ChecklistExtension()])
-    assert html == """
+    expected = """
 <h1>Hello World</h1>
 <ul>
 <li><input type="checkbox" disabled> foo</li>
@@ -36,3 +35,9 @@ lorem ipsum
 </ul>
 <p>lorem ipsum</p>
     """.strip()
+
+    html = markdown.markdown(source, extensions=[ChecklistExtension()])
+    assert html == expected
+
+    html = markdown.markdown(source, extensions=['markdown_checklist.extension'])
+    assert html == expected
