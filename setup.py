@@ -15,7 +15,7 @@ META = {
     'license': LICENSE,
     'author': AUTHOR,
     'author_email': '',
-    'maintainer': 'FND',
+    'maintainer': AUTHOR,
     'packages': find_packages(exclude=['test']),
     'platforms': 'Posix; MacOS X; Windows',
     'include_package_data': True,

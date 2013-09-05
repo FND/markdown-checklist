@@ -3,8 +3,8 @@
 release: readme clean test
 	git diff --exit-code # ensure there are no uncommitted changes
 	git tag -a \
-			-m v`python -c 'import markdown_checklist; print markdown_checklist.__version__'` \
-			v`python -c 'import markdown_checklist; print markdown_checklist.__version__'`
+			-m v`python -c 'import markdown_checklist; print(markdown_checklist.__version__)'` \
+			v`python -c 'import markdown_checklist; print(markdown_checklist.__version__)'`
 	git push origin master --tags
 	# XXX: duplicates dist target
 	rm -r dist || true
@@ -15,7 +15,7 @@ dist: clean test
 	python setup.py sdist
 
 readme:
-	python -c "import markdown_checklist as cl; print cl.__doc__.strip()" > README
+	python -c "import markdown_checklist as cl; print(cl.__doc__.strip())" > README
 	sed -i "2i[![build status](https://secure.travis-ci.org/FND/markdown-checklist.png)](http://travis-ci.org/FND/markdown-checklist)" README
 
 test: clean
