@@ -1,6 +1,8 @@
+import sys
 import os
 
 from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
 
 from markdown_checklist import (__version__ as VERSION, __author__ as AUTHOR,
         __license__ as LICENSE, __doc__ as DESC)
@@ -26,6 +28,24 @@ META = {
         'coverage': ['figleaf', 'coverage']
     }
 }
+
+
+# entry point for tests (required because `coverage` fails to invoke `py.test`
+# in Travis CI's virtualenv)
+
+class PyTest(TestCommand):
+
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        errno = pytest.main(self.test_args)
+        sys.exit(errno)
+
+META['cmdclass'] = { 'test': PyTest }
 
 
 if __name__ == '__main__':
