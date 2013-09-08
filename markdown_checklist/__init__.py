@@ -40,8 +40,25 @@ or
     import markdown
     from markdown_checklist.extension import ChecklistExtension
     html = markdown.markdown(source, extensions=[ChecklistExtension()])
+
+There is also a small JavaScript/jQuery library to make checkboxes interactive:
+
+    new Checklists("article", function(checkbox, callback) {
+        var uri = checkbox.closest("article").find("h1 a").attr("href");
+        jQuery.get(uri, callback);
+    }, function(markdown, checkbox, callback) {
+        var uri = checkbox.closest("article").find("h1 a").attr("href");
+        jQuery.ajax({
+            type: "put",
+            uri: uri,
+            data: markdown,
+            success: callback
+        });
+    });
+
+See included `checklists.js` for details.
 """
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 __author__ = 'FND'
 __license__ = 'MIT'

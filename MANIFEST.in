@@ -1,0 +1,3 @@
+include Makefile
+recursive-include test *
+include markdown_checklist/checklists.js
