@@ -20,7 +20,7 @@ function Checklists(container, retriever, storer) {
 	this.retriever = retriever;
 	this.storer = storer;
 
-	var checklists = $("ul:has(" + this.checkboxSelector + ")", container); // XXX: imprecise, inefficient
+	var checklists = $(".checklist", container);
 	checklists.find(this.checkboxSelector).prop("disabled", false);
 	var self = this;
 	checklists.on("change", this.checkboxSelector, function() {

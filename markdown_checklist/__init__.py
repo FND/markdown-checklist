@@ -59,6 +59,6 @@ There is also a small JavaScript/jQuery library to make checkboxes interactive:
 See included `checklists.js` for details.
 """
 
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 __author__ = 'FND'
 __license__ = 'MIT'
