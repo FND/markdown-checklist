@@ -12,29 +12,8 @@ def makeExtension(configs=None):
 class ChecklistExtension(Extension):
 
     def extendMarkdown(self, md, md_globals):
-        md.preprocessors.add('checklist', ChecklistPreprocessor(md),
-                '<reference')
         md.postprocessors.add('checklist', ChecklistPostprocessor(md),
-                '>unescape')
-
-
-class ChecklistPreprocessor(Preprocessor):
-    """
-    injects checkbox elements
-    """
-
-    pattern = re.compile(r'^([*-]) \[([ Xx])\]')
-
-    def run(self, lines):
-        return [self._transform_line(line) for line in lines]
-
-    def _transform_line(self, line):
-        return self.pattern.sub(self._replacer, line)
-
-    def _replacer(self, match):
-        list_prefix, state = match.groups()
-        checked = ' checked' if state != ' ' else ''
-        return '%s <input type="checkbox" disabled%s>' % (list_prefix, checked)
+                '>raw_html')
 
 
 class ChecklistPostprocessor(Postprocessor):
@@ -42,9 +21,15 @@ class ChecklistPostprocessor(Postprocessor):
     adds checklist class to list element
     """
 
-    pattern = re.compile(r'^([*-]) \[([ Xx])\]')
+    pattern = re.compile(r'<li>\[([ Xx])\]')
+
+    def checklister(self, match):
+        state = match.group(1);
+        checked = ' checked' if state != ' ' else ''
+        return '<li><input type="checkbox" disabled%s>' % checked
 
     def run(self, html):
+        html = re.sub(self.pattern, self.checklister, html)
         before = '<ul>\n<li><input type="checkbox"'
         after = before.replace('<ul>', '<ul class="checklist">')
         return html.replace(before, after)
