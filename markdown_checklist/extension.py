@@ -6,7 +6,10 @@ from markdown.postprocessors import Postprocessor
 
 
 def makeExtension(configs=None):
-    return ChecklistExtension(configs=configs)
+    if configs is None:
+        return ChecklistExtension()
+    else:
+        return ChecklistExtension(configs=configs)
 
 
 class ChecklistExtension(Extension):
