@@ -1,6 +1,6 @@
 from markdown import markdown
 
-from markdown_checklists.extension import ChecklistExtension
+from markdown_checklists.extension import ChecklistsExtension
 
 
 def test_checklists():
@@ -36,7 +36,7 @@ lorem ipsum
 <p>lorem ipsum</p>
     """.strip()
 
-    html = markdown(source, extensions=[ChecklistExtension()])
+    html = markdown(source, extensions=[ChecklistsExtension()])
     assert html == expected
 
     html = markdown(source, extensions=['markdown_checklists.extension'])
@@ -55,7 +55,7 @@ Hello World
 lorem ipsum
     """.strip()
 
-    html = markdown(source, extensions=[ChecklistExtension()])
+    html = markdown(source, extensions=[ChecklistsExtension()])
     assert html == """
 <h1>Hello World</h1>
 <ul class="checklist">
@@ -80,7 +80,7 @@ def test_class():
 * [ ] ...
     """.strip()
 
-    html = markdown(source, extensions=[ChecklistExtension()])
+    html = markdown(source, extensions=[ChecklistsExtension()])
     assert html == """
 <ul class="checklist">
 <li class="task-list-item"><input type="checkbox" checked><label> foo</label></li>
