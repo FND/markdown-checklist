@@ -22,7 +22,9 @@ Markdown-Checklist is forked from [Markdown Checklist](https://github.com/FND/ma
 
     $ pip install markdown-checklist
 
-###  Install OmniMarkupPreviewer Markdown Renderer Extension to Current User Sublime-Text 3
+### Markdown-Renderer Extension for OmniMarkupPreviewer
+
+*installs the extension to the current user.*
 
     $ make OmniMarkupPreviewerInstall
 
