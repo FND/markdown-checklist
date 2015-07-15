@@ -4,17 +4,19 @@ import os
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
+from markdown_checklists import (__version__ as VERSION, __author__ as AUTHOR,
+        __license__ as LICENSE, __doc__ as DESC)
 
 META = {
     'name': 'markdown-checklists',
     'url': 'https://github.com/tobiashochguertel/markdown-checklists',
-    'version': '0.5.1',
+    'version': VERSION,
     'description': 'Fork of Markdown-checklist: Python Markdown extension for task lists with checkboxes',
-    'long_description': 'Extended Version of Markdown-checklist.',
-    'license': 'MIT',
-    'author': 'Tobias Hochgürtel; FND@innoq',
+    'long_description': DESC.strip(),
+    'license': LICENSE,
+    'author': AUTHOR,
     'author_email': 'tobias.hochguertel@googlemail.com',
-    'maintainer': 'tobias.hochguertel@googlemail.com',
+    'maintainer': AUTHOR,
     'packages': find_packages(exclude=['test']),
     'platforms': 'Posix; MacOS X; Windows',
     'include_package_data': True,
