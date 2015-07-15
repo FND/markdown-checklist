@@ -11,11 +11,11 @@ OmniMarkupPreviewerRelease: readme clean test
 	mkdir -p target/templates
 	mkdir -p target/OmniMarkupLib/Renderers/libs/markdown/extensions
 
-	cp -rf markdown_checklist/extension.py target/OmniMarkupLib/Renderers/libs/markdown/extensions/checklists.py
-	cp -rf markdown_checklist/checklists.js target/public/checklists.js
-	cp -rf markdown_checklist/checklists.css target/public/checklists.css
-	cp -rf markdown_checklist/checklists.tpl target/templates/checklists.tpl
-	cp -rf markdown_checklist/checklists-export.tpl target/templates/checklists-export.tpl
+	cp -rf markdown_checklists/extension.py target/OmniMarkupLib/Renderers/libs/markdown/extensions/checklists.py
+	cp -rf markdown_checklists/checklists.js target/public/checklists.js
+	cp -rf markdown_checklists/checklists.css target/public/checklists.css
+	cp -rf markdown_checklists/checklists.tpl target/templates/checklists.tpl
+	cp -rf markdown_checklists/checklists-export.tpl target/templates/checklists-export.tpl
 
 OmniMarkupPreviewerInstall: OmniMarkupPreviewerRelease
 	cp -rf target/* "$(OMNIMARKUPPREVIEWER_INSTALL_PATH)"
@@ -23,8 +23,8 @@ OmniMarkupPreviewerInstall: OmniMarkupPreviewerRelease
 release: readme clean test
 	git diff --exit-code # ensure there are no uncommitted changes
 	git tag -a \
-			-m v`python -c 'import markdown_checklist; print(markdown_checklist.__version__)'` \
-			v`python -c 'import markdown_checklist; print(markdown_checklist.__version__)'`
+			-m v`python -c 'import markdown_checklists; print(markdown_checklists.__version__)'` \
+			v`python -c 'import markdown_checklists; print(markdown_checklists.__version__)'`
 	git push origin master --tags
 	# XXX: duplicates dist target
 	rm -r dist || true
@@ -35,7 +35,7 @@ dist: clean test
 	$(PYTHON) setup.py sdist
 
 readme:
-	$(PYTHON) -c "import markdown_checklist as cl; print(cl.__doc__.strip())" > README
+	$(PYTHON) -c "import markdown_checklists as cl; print(cl.__doc__.strip())" > README
 	sed -i "2i[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklist.svg)](https://travis-ci.org/tobiashochguertel/markdown-checklist)" README
 	sed -i "3i<!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->" README
 
@@ -67,5 +67,5 @@ clean:
 	rm -rf html .figleaf coverage.lst # figleaf
 	rm -rf htmlcov .coverage # coverage
 	rm -rf test/__pycache__ # pytest
-	rm -r markdown_checklist.egg-info || true
+	rm -r markdown_checklists.egg-info || true
 	rm -rf target/

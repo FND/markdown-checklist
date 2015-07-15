@@ -1,11 +1,11 @@
-[Markdown Checklist](https://github.com/FND/markdown-checklist)
+[Markdown Checklists](https://github.com/tobiashochguertel/markdown-checklists)
 [![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklist.svg)](https://travis-ci.org/tobiashochguertel/markdown-checklist)
 <!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->
 
 a [Python Markdown](http://pythonhosted.org/Markdown/) extension for lists of
 tasks with checkboxes inspured by [GitHub task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments).
 
-Markdown-Checklist is forked from [Markdown Checklist](https://github.com/FND/markdown-checklist) and extended with addtional features.
+Markdown-Checklists is forked from [Markdown Checklist](https://github.com/FND/markdown-checklist) and extended with addtional features.
 
 ## Features
 
@@ -31,12 +31,12 @@ Markdown-Checklist is forked from [Markdown Checklist](https://github.com/FND/ma
 ## Usage
 
     import markdown
-    html = markdown.markdown(source, extensions=['markdown_checklist.extension'])
+    html = markdown.markdown(source, extensions=['markdown_checklists.extension'])
 
 or
 
     import markdown
-    from markdown_checklist.extension import ChecklistExtension
+    from markdown_checklists.extension import ChecklistExtension
     html = markdown.markdown(source, extensions=[ChecklistExtension()])
 
 There is also a small JavaScript/jQuery library to make checkboxes interactive:
