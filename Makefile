@@ -35,7 +35,7 @@ dist: clean test
 	$(PYTHON) setup.py sdist
 
 readme:
-	# $(PYTHON) -c "import markdown_checklists as cl; print(cl.__doc__.strip())" > README
+	$(PYTHON) -c "import markdown_checklists as cl; print(cl.__doc__.strip())" > README
 	sed -i "2i[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklist.svg)](https://travis-ci.org/tobiashochguertel/markdown-checklist)" README
 	sed -i "3i<!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->" README
 
