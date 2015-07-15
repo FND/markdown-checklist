@@ -19,7 +19,7 @@ Markdown-Checklists is forked from [Markdown Checklist](https://github.com/FND/m
 
 ## Installation
 
-    $ pip install markdown-checklist
+    $ pip install markdown-checklists
 
 ### Markdown-Renderer Extension for OmniMarkupPreviewer
 
