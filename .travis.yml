@@ -6,7 +6,7 @@ python:
 - pypy
 
 install:
-- pip install --use-mirrors \
+- pip install \
     `python -c 'from setup import META; print(" ".join(META["extras_require"]["testing"] + META["install_requires"]))'`
 - '[ "${TRAVIS_PYTHON_VERSION}" = "2.6" ] && pip install importlib || true'
 - pip install coveralls
