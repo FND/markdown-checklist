@@ -7,21 +7,21 @@ from markdown.postprocessors import Postprocessor
 
 def makeExtension(configs=None):
     if configs is None:
-        return ChecklistExtension()
+        return ChecklistsExtension()
     else:
-        return ChecklistExtension(configs=configs)
+        return ChecklistsExtension(configs=configs)
 
 
-class ChecklistExtension(Extension):
+class ChecklistsExtension(Extension):
 
     def extendMarkdown(self, md, md_globals):
-        md.postprocessors.add('checklist', ChecklistPostprocessor(md),
+        md.postprocessors.add('checklists', ChecklistsPostprocessor(md),
                 '>raw_html')
 
 
-class ChecklistPostprocessor(Postprocessor):
+class ChecklistsPostprocessor(Postprocessor):
     """
-    adds checklist class to list element
+    adds checklists class to list element
     """
 
     pattern = re.compile(r'<li>\[([ Xx])\]')

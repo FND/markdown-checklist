@@ -1,5 +1,5 @@
 [Markdown Checklists](https://github.com/tobiashochguertel/markdown-checklists)
-[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklist.svg)](https://travis-ci.org/tobiashochguertel/markdown-checklist)
+[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklists.svg)](https://travis-ci.org/tobiashochguertel/markdown-checklists)
 <!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->
 
 a [Python Markdown](http://pythonhosted.org/Markdown/) extension for lists of
