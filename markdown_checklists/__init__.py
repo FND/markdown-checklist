@@ -57,5 +57,5 @@ See included `checklists.js` for details.
 """
 
 __version__ = '0.5.1'
-__author__ = 'Tobias Hochgürtel, FND'
+__author__ = 'Tobias Hochguertel, FND'
 __license__ = 'MIT'
