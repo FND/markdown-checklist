@@ -34,10 +34,27 @@ dist: clean test
 	rm -r dist || true
 	$(PYTHON) setup.py sdist
 
-readme:
+readme: example
 	$(PYTHON) -c "import markdown_checklists as cl; print(cl.__doc__.strip())" > README
 	sed -i "2i[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklists.svg?branch=v0.5.1)](https://travis-ci.org/tobiashochguertel/markdown-checklists)" README
 	sed -i "3i<!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->" README
+
+example:
+	$(PYTHON) -c '
+	from markdown import markdown;
+	from markdown_checklists.extension import ChecklistsExtension;
+	html=""
+	with open("example/testFile.md", "r") as mdfile:
+	 source = mdfile.read();
+
+	tplsource="";
+	with open("markdown_checklists/checklists.tpl", "r") as tplfile:
+	 tplsource = tplfile.read();
+
+	htmlsource = markdown(source, extensions=[ChecklistsExtension()]);
+	html = tplsource.replace("{{!html_part}}", htmlsource);
+	html = html.replace("/public/","public/");
+	print(html);' > example/testFile.html
 
 test: clean
 	py.test -s --tb=short test -vv
