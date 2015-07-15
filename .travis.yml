@@ -8,13 +8,13 @@ python:
 install:
 - pip install --use-mirrors \
     `python -c 'from setup import META; print(" ".join(META["extras_require"]["testing"] + META["install_requires"]))'`
-- '[ "${TRAVIS_PYTHON_VERSION}" = "2.6" ] && pip install importlib || true' 
+- '[ "${TRAVIS_PYTHON_VERSION}" = "2.6" ] && pip install importlib || true'
 - pip install coveralls
 - python setup.py develop
 
 script:
 - make clean
-- coverage run --source=markdown_checklist setup.py test
+- coverage run --source=markdown_checklists setup.py test
 - coverage report -m
 
 after_success: coveralls
