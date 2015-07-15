@@ -8,10 +8,10 @@ from setuptools.command.test import test as TestCommand
 META = {
     'name': 'markdown-checklists',
     'url': 'https://github.com/tobiashochguertel/markdown-checklists',
-    'version': "0.9.0",
+    'version': "0.5.1",
     'description': 'Fork of Markdown-checklist: Python Markdown extension for task lists with checkboxes',
     'long_description': "Extended Version of Markdown-checklist.",
-    'license': "GPL-2.0",
+    'license': "MIT",
     'author': "Tobias Hochgürtel; FND@innoq",
     'author_email': 'tobias.hochguertel@googlemail.com',
     'maintainer': "tobias.hochguertel@googlemail.com",

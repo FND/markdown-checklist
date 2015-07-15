@@ -1,6 +1,6 @@
 from markdown import markdown
 
-from markdown_checklist.extension import ChecklistExtension
+from markdown_checklists.extension import ChecklistExtension
 
 
 def test_checklists():
@@ -39,7 +39,7 @@ lorem ipsum
     html = markdown(source, extensions=[ChecklistExtension()])
     assert html == expected
 
-    html = markdown(source, extensions=['markdown_checklist.extension'])
+    html = markdown(source, extensions=['markdown_checklists.extension'])
     assert html == expected
 
 
