@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+ul.checklist {
+  list-style: none;
+}
+
+label {
+  cursor: pointer;
+  display: inline-block;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /*&:hover {
+    + label {
+      &:after {
+        transform: scale(0.75);
+        background-color: rgba(0,0,0,0.1);
+      }
+    }
+  }*/
+}
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+  border-color: #555;
+}
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  position: relative;
+  padding: 10px;
+  padding-left: 2em;
+  vertical-align: middle;
+}
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  content: '';
+  color: orange;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid grey;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+input[type="checkbox"] + label:after,
+input[type="radio"] + label:after {
+  content: '';
+  background-color: orange;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 14px;
+  height: 14px;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 200ms ease-out;
+          transition: transform 200ms ease-out;
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: '\2713';
+}
+
+input[type="radio"]:checked + label:before {
+  -webkit-animation: borderscale 300ms ease-in;
+          animation: borderscale 300ms ease-in;
+}
+input[type="radio"]:checked + label:after {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+input[type="radio"] + label:before, input[type="radio"] + label:after {
+  border-radius: 50%;
+}
+
+@-webkit-keyframes borderscale {
+  50% {
+    box-shadow: 0 0 0 4px orange;
+  }
+}
+
+@keyframes borderscale {
+  50% {
+    box-shadow: 0 0 0 4px orange;
+  }
+}
