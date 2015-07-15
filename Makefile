@@ -69,3 +69,4 @@ clean:
 	rm -rf test/__pycache__ # pytest
 	rm -r markdown_checklists.egg-info || true
 	rm -rf target/
+	rm -rf dist/
