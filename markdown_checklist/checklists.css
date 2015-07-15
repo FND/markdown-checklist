@@ -46,7 +46,7 @@ input[type="radio"] + label:before {
   content: '';
   color: orange;
   position: absolute;
-  top: 5px;
+  /*top: 5px;*/
   left: 0;
   width: 20px;
   height: 20px;

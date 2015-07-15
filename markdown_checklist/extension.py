@@ -25,7 +25,7 @@ class ChecklistPostprocessor(Postprocessor):
     """
 
     pattern = re.compile(r'<li>\[([ Xx])\]')
-    item_pattern = re.compile(r'(<li.*<input type="checkbox".*>)(.*)(</li>)')
+    item_pattern = re.compile(r'(<li.*<input type="checkbox" >)(.*|.*\n*.*)(</li>)')
 
     def run(self, html):
         html = re.sub(self.pattern, self._convert_checkbox, html)
@@ -40,7 +40,7 @@ class ChecklistPostprocessor(Postprocessor):
         activeState = ''
         checked = ' checked' if state != ' ' else ''
         activeAttr = ' disabled' if activeState != ' ' else ''
-        return '<li class="task-list-item"><input type="checkbox" %s>' % checked
+        return '<li class="task-list-item"><input type="checkbox" %s />' % checked
 
     def _convert_label(self, match):
         before_item = match.group(1)
