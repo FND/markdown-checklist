@@ -36,8 +36,8 @@ Markdown-Checklists is forked from [Markdown Checklist](https://github.com/FND/m
 or
 
     import markdown
-    from markdown_checklists.extension import ChecklistExtension
-    html = markdown.markdown(source, extensions=[ChecklistExtension()])
+    from markdown_checklists.extension import ChecklistsExtension
+    html = markdown.markdown(source, extensions=[ChecklistsExtension()])
 
 There is also a small JavaScript/jQuery library to make checkboxes interactive:
 
