@@ -25,7 +25,7 @@ class ChecklistPostprocessor(Postprocessor):
     """
 
     pattern = re.compile(r'<li>\[([ Xx])\]')
-    item_pattern = re.compile(r'(<li.*<input type="checkbox" >)(.*|.*\n*.*)(</li>)')
+    item_pattern = re.compile(r'(<li.*<input type="checkbox"[ ]?[c]?[h]?[e]?[c]?[k]?[e]?[d]?>)(.*|.*\n*.*)(</li>)')
 
     def run(self, html):
         html = re.sub(self.pattern, self._convert_checkbox, html)

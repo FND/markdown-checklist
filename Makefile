@@ -40,7 +40,7 @@ readme:
 	sed -i "3i<!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->" README
 
 test: clean
-	py.test -s --tb=short test
+	py.test -s --tb=short test -vv
 
 lint:
 	find . -name "*.py" -not -path "./venv/*" | while read filepath; do \

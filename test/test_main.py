@@ -29,9 +29,9 @@ lorem ipsum
     expected = """
 <h1>Hello World</h1>
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox"> foo</li>
-<li class="task-list-item"><input type="checkbox" checked> bar</li>
-<li class="task-list-item"><input type="checkbox"> baz</li>
+<li class="task-list-item"><input type="checkbox"><label> foo</label></li>
+<li class="task-list-item"><input type="checkbox" checked><label> bar</label></li>
+<li class="task-list-item"><input type="checkbox"><label> baz</label></li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
@@ -59,9 +59,9 @@ lorem ipsum
     assert html == """
 <h1>Hello World</h1>
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox" checked> foo</li>
-<li class="task-list-item"><input type="checkbox"> bar</li>
-<li class="task-list-item"><input type="checkbox" checked> baz</li>
+<li class="task-list-item"><input type="checkbox" checked><label> foo</label></li>
+<li class="task-list-item"><input type="checkbox"><label> bar</label></li>
+<li class="task-list-item"><input type="checkbox" checked><label> baz</label></li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
@@ -83,14 +83,14 @@ def test_class():
     html = markdown(source, extensions=[ChecklistExtension()])
     assert html == """
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox" checked> foo</li>
-<li class="task-list-item"><input type="checkbox"> bar</li>
-<li class="task-list-item"><input type="checkbox" checked> baz</li>
+<li class="task-list-item"><input type="checkbox" checked><label> foo</label></li>
+<li class="task-list-item"><input type="checkbox"><label> bar</label></li>
+<li class="task-list-item"><input type="checkbox" checked><label> baz</label></li>
 </ul>
 <hr />
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox"> lorem</li>
-<li class="task-list-item"><input type="checkbox" checked> ipsum</li>
-<li class="task-list-item"><input type="checkbox"> ...</li>
+<li class="task-list-item"><input type="checkbox"><label> lorem</label></li>
+<li class="task-list-item"><input type="checkbox" checked><label> ipsum</label></li>
+<li class="task-list-item"><input type="checkbox"><label> ...</label></li>
 </ul>
     """.strip()

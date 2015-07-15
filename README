@@ -3,32 +3,35 @@
 <!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->
 
 a [Python Markdown](http://pythonhosted.org/Markdown/) extension for lists of
-tasks with checkboxes inspured by [GitHub task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments).
+tasks with checkboxes
 
-Markdown-Checklist is forked from [Markdown Checklist](https://github.com/FND/markdown-checklist) and extended with addtional features.
+inspired by
+[GitHub task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments):
 
-## Features
+    * [ ] foo
+    * [x] bar
+    * [ ] baz
+
+becomes
+
+    <ul>
+    <li><input type="checkbox" disabled> foo</li>
+    <li><input type="checkbox" disabled checked> bar</li>
+    <li><input type="checkbox" disabled> baz</li>
+    </ul>
 
 * a dash can be used instead of an asterisk for list items
 * both upper- and lowercase "x" are accepted to activate checkboxes
 
-## Additional Features
 
-* MakeFile provides task to create for Sublime-Text 3 Plugin [OmniMarkupPreviewer](https://github.com/timonwong/OmniMarkupPreviewer) an Markdown-Renderer extension with additonal template files.
-* Class Attribute for `<ul>`-Tag for Checklists.
-* Class Attribute for `<li>`-Tag of Checklists.
-
-## Installation
+Installation
+------------
 
     $ pip install markdown-checklist
 
-### Markdown-Renderer Extension for OmniMarkupPreviewer
 
-*installs the extension to the current user.*
-
-    $ make OmniMarkupPreviewerInstall
-
-## Usage
+Usage
+-----
 
     import markdown
     html = markdown.markdown(source, extensions=['markdown_checklist.extension'])
