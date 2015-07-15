@@ -3,6 +3,24 @@ PYTHON     = /cygdrive/d/Applications/Python/Python34/python.exe
 OMNIMARKUPPREVIEWER_INSTALL_PATH_WINDOWS = "$(APPDATA)\Sublime Text 3\Packages\OmniMarkupPreviewer"
 OMNIMARKUPPREVIEWER_INSTALL_PATH = `/usr/bin/cygpath.exe -ua $(OMNIMARKUPPREVIEWER_INSTALL_PATH_WINDOWS)`
 
+define exmapleHtmlChecklistBuildScript
+from markdown import markdown;
+from markdown_checklists.extension import ChecklistsExtension;
+html="";
+with open("example/testFile.md", "r") as mdfile:
+  source = mdfile.read();
+tplsource="";
+with open("markdown_checklists/checklists.tpl", "r") as tplfile:
+  tplsource = tplfile.read();
+htmlsource = markdown(source, extensions=[ChecklistsExtension()]);
+html = tplsource.replace("{{!html_part}}", htmlsource);
+html = html.replace("/public/","public/");
+html = html.replace("%if mathjax_enabled:","");
+html = html.replace("%end","");
+print(html);
+endef
+export exmapleHtmlChecklistBuildScript
+
 .PHONY: release dist readme test lint coverage clean
 
 OmniMarkupPreviewerRelease: readme clean test
@@ -34,27 +52,14 @@ dist: clean test
 	rm -r dist || true
 	$(PYTHON) setup.py sdist
 
-readme: example
+readme: example-html
 	$(PYTHON) -c "import markdown_checklists as cl; print(cl.__doc__.strip())" > README
 	sed -i "2i[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklists.svg?branch=v0.5.1)](https://travis-ci.org/tobiashochguertel/markdown-checklists)" README
 	sed -i "3i<!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->" README
 
-example:
-	$(PYTHON) -c '
-	from markdown import markdown;
-	from markdown_checklists.extension import ChecklistsExtension;
-	html=""
-	with open("example/testFile.md", "r") as mdfile:
-	 source = mdfile.read();
-
-	tplsource="";
-	with open("markdown_checklists/checklists.tpl", "r") as tplfile:
-	 tplsource = tplfile.read();
-
-	htmlsource = markdown(source, extensions=[ChecklistsExtension()]);
-	html = tplsource.replace("{{!html_part}}", htmlsource);
-	html = html.replace("/public/","public/");
-	print(html);' > example/testFile.html
+example-html:
+	@echo "$$exmapleHtmlChecklistBuildScript"> build.example-thml.py
+	pyminifier --gzip  build.example-thml.py > mini-build.example-thml.py && $(PYTHON) mini-build.example-thml.py | tail -n +5 > example/testFile.html
 
 test: clean
 	py.test -s --tb=short test -vv

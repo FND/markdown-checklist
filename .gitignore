@@ -4,3 +4,5 @@ target/
 *.egg-info
 dist/
 build/
+mini-build.example-thml.py
+build.example-thml.py
