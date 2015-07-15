@@ -15,8 +15,8 @@ Markdown-Checklist is forked from [Markdown Checklist](https://github.com/FND/ma
 ## Additional Features
 
 * MakeFile provides task to create for Sublime-Text 3 Plugin [OmniMarkupPreviewer](https://github.com/timonwong/OmniMarkupPreviewer) an Markdown-Renderer extension with additonal template files.
-* Class Attribute for <ul>-Tag for Checklists.
-* Class Attribute for <li>-Tag of Checklists.
+* Class Attribute for `<ul>`-Tag for Checklists.
+* Class Attribute for `<li>`-Tag of Checklists.
 
 ## Installation
 
