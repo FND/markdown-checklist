@@ -111,8 +111,8 @@ def test_realworld_example():
 **09.07.2015 - Getting Startet:**
 
  - [] Der Unit-Test `contextMenuReplacesText` wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: `X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java`
- - [X] Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (`mvn exec:java`). Weiterer Schritt nötig um Parent Pom lokal zu installieren: `cd pdfsam-parent && mvn install`, bevor pdfsam-community gestartet werden kann.
- - [ ] Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: `mvn clean install -Dmaven.test.skip=true && cd pdfsam-parent/ && mvn install && cd .. && cd pdfsam-community && mvn exec:java`
+ - [X] Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (`mvn exec:java`). Weiterer Schritt noetig um Parent Pom lokal zu installieren: `cd pdfsam-parent && mvn install`, bevor pdfsam-community gestartet werden kann.
+ - [ ] Neuer vollstaendiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: `mvn clean install -Dmaven.test.skip=true && cd pdfsam-parent/ && mvn install && cd .. && cd pdfsam-community && mvn exec:java`
 
     """.strip()
 
@@ -121,8 +121,8 @@ def test_realworld_example():
 <p><strong>09.07.2015 - Getting Startet:</strong></p>
 <ul>
 <li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
-<li>[X] Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt nötig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</li>
-<li>[ ] Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></li>
+<li>[X] Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt noetig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</li>
+<li>[ ] Neuer vollstaendiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></li>
 </ul>
     """.strip()
 
@@ -132,7 +132,7 @@ def test_realworld_example():
 <p><strong>09.07.2015 - Getting Startet:</strong></p>
 <ul>
 <li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
-<li class="task-list-item"><input type="checkbox" id="26703b3e4519a2ab24f5e1436367e6ecdcff46964278f6456ec5530dda4ee772" checked><label for="26703b3e4519a2ab24f5e1436367e6ecdcff46964278f6456ec5530dda4ee772"> Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt nötig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</label></li>
-<li class="task-list-item"><input type="checkbox" id="2e265eca17bd1470a09518ebe6fa9605a08101e1a90a44a13456fc7717bd49f1"><label for="2e265eca17bd1470a09518ebe6fa9605a08101e1a90a44a13456fc7717bd49f1"> Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="f52fc4f205721240ee423f364cf8f02be6f746b8f896c7b66b6d4ef1a22b8a17" checked><label for="f52fc4f205721240ee423f364cf8f02be6f746b8f896c7b66b6d4ef1a22b8a17"> Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt noetig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</label></li>
+<li class="task-list-item"><input type="checkbox" id="ab359a20aaed490a792e4e5ee94e20e1d57e46ab44c2c450cbc0783c8c2a61be"><label for="ab359a20aaed490a792e4e5ee94e20e1d57e46ab44c2c450cbc0783c8c2a61be"> Neuer vollstaendiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></label></li>
 </ul>
     """.strip()
