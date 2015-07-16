@@ -17,42 +17,41 @@
 <p><strong>Getting Startet:</strong></p>
 <p><em>Schritt für Schritt zum starten der Entwicklungsumgebung</em></p>
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox"><label> IntelliJ IDEA Community Edition 14.1.4</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Java Main-Methode finden. <em>Suche öffnen:</em> <kbd>SHIFT</kbd><kbd>SHIFT</kbd> -&gt; <code>main</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="8abd0497e86cbdbc24b12205b9604aa963bf56b35bd18ce41d652c7b9238910a"><label for="8abd0497e86cbdbc24b12205b9604aa963bf56b35bd18ce41d652c7b9238910a"> IntelliJ IDEA Community Edition 14.1.4</label></li>
+<li class="task-list-item"><input type="checkbox" id="36fcb753b8f43835d6bc1d17bd4efca63a037b7a5924e0812b47b47567713c93"><label for="36fcb753b8f43835d6bc1d17bd4efca63a037b7a5924e0812b47b47567713c93"> Java Main-Methode finden. <em>Suche öffnen:</em> <kbd>SHIFT</kbd><kbd>SHIFT</kbd> -&gt; <code>main</code></label></li>
 </ul>
 <p><strong>09.07.2015 - Getting Startet:</strong></p>
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox"><label> Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?)
- Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></label></li>
-<li class="task-list-item"><input type="checkbox"><label> Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt nötig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="4908781f197bb63a7a94ebad5e0fab0e2eefdec712db0ab8b69061c13b7cd979"><label for="4908781f197bb63a7a94ebad5e0fab0e2eefdec712db0ab8b69061c13b7cd979"> Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="ba1c5e8a0f03c6d50aaa80e5a980f20e3f3acc38d32232982c4c9cc6e445da39"><label for="ba1c5e8a0f03c6d50aaa80e5a980f20e3f3acc38d32232982c4c9cc6e445da39"> Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt nötig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</label></li>
+<li class="task-list-item"><input type="checkbox" id="e8e65dc8210448b10c10e671a4f6e4a260c21fc77d4172ee470f84265ea5176b"><label for="e8e65dc8210448b10c10e671a4f6e4a260c21fc77d4172ee470f84265ea5176b"> Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></label></li>
 </ul>
 <p><strong>14.07.2015 - Getting Startet:</strong></p>
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox"><label> Main Methode finden. <em>Suche öffnen:</em> <kbd>SHIFT</kbd><kbd>SHIFT</kbd> -&gt; <code>main</code></label></li>
-<li class="task-list-item"><input type="checkbox"><label> Workspace Klassen finden. <em>Suche öffnen:</em> <kbd>SHIFT</kbd><kbd>SHIFT</kbd> -&gt; <code>Workspace</code></label></li>
-<li class="task-list-item"><input type="checkbox"><label> Maven Projekt Starten und Debuggen. <em>Window: Maven Projects</em> -&gt; <code>PDFsam Community Edition application</code> -&gt; <em>Plugins</em> -&gt; <em>exec</em> -&gt; <em>exec:java</em> -&gt; Rechte Maustaste -&gt; <em>Create ...</em> ( <a href="https://www.jetbrains.com/idea/help/creating-maven-run-debug-configuration.html">#1</a> ). Dann kann man mit <code>Run ...</code> oder <code>Debug ...</code> die Anwendung ausführen oder debuggen.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Starter (Run.../Debug...) so anpassen das Kommandozeilen Optionen mit angegeben werden. <em>Command line:</em> <code>exec:java -Dexec.args=-h</code> <em>Name:</em> <code>pdfsam-community [exec:java -Dexec.args="-h"]</code>.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Übergabe des Kommandozeilenparameters überprüfen. <em>Debug...</em> -&gt; <em>Klasse: <code>org.pdfsam.community.App</code></em> -&gt; Breakpoint innerhalb der Main-Methode. Parameter <code>args</code> überprüfen ob <code>-h</code> enthalten ist.</label></li>
+<li class="task-list-item"><input type="checkbox" id="63687d1e6b0129ebe5290fee9c010033c2c0ba60b386116cad06732ce4c1a72b"><label for="63687d1e6b0129ebe5290fee9c010033c2c0ba60b386116cad06732ce4c1a72b"> Main Methode finden. <em>Suche öffnen:</em> <kbd>SHIFT</kbd><kbd>SHIFT</kbd> -&gt; <code>main</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="d4cf1393ae69fe8db27aac64ffa6599fd488920327ceb6c3783d8f2c51bce57f"><label for="d4cf1393ae69fe8db27aac64ffa6599fd488920327ceb6c3783d8f2c51bce57f"> Workspace Klassen finden. <em>Suche öffnen:</em> <kbd>SHIFT</kbd><kbd>SHIFT</kbd> -&gt; <code>Workspace</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="57a512613a53def1b0ba94d548d41b9c872a28d2d829acb601f0520d94e93c48"><label for="57a512613a53def1b0ba94d548d41b9c872a28d2d829acb601f0520d94e93c48"> Maven Projekt Starten und Debuggen. <em>Window: Maven Projects</em> -&gt; <code>PDFsam Community Edition application</code> -&gt; <em>Plugins</em> -&gt; <em>exec</em> -&gt; <em>exec:java</em> -&gt; Rechte Maustaste -&gt; <em>Create ...</em> ( <a href="https://www.jetbrains.com/idea/help/creating-maven-run-debug-configuration.html">#1</a> ). Dann kann man mit <code>Run ...</code> oder <code>Debug ...</code> die Anwendung ausführen oder debuggen.</label></li>
+<li class="task-list-item"><input type="checkbox" id="da8302ea14fc5394ae524630f75fb3bdb39f5e352cd4ff3e1864c4c5d586651b"><label for="da8302ea14fc5394ae524630f75fb3bdb39f5e352cd4ff3e1864c4c5d586651b"> Starter (Run.../Debug...) so anpassen das Kommandozeilen Optionen mit angegeben werden. <em>Command line:</em> <code>exec:java -Dexec.args=-h</code> <em>Name:</em> <code>pdfsam-community [exec:java -Dexec.args="-h"]</code>.</label></li>
+<li class="task-list-item"><input type="checkbox" id="34d8dbd96861edc010bcad9f83eda29b1c2ccb0ea0e5cc4725bd26927bf39832"><label for="34d8dbd96861edc010bcad9f83eda29b1c2ccb0ea0e5cc4725bd26927bf39832"> Übergabe des Kommandozeilenparameters überprüfen. <em>Debug...</em> -&gt; <em>Klasse: <code>org.pdfsam.community.App</code></em> -&gt; Breakpoint innerhalb der Main-Methode. Parameter <code>args</code> überprüfen ob <code>-h</code> enthalten ist.</label></li>
 </ul>
 <p><code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></p>
 <p><em>Vorgehen</em></p>
 <ul class="checklist">
-<li class="task-list-item"><input type="checkbox"><label> Main-Methode auf Kommandozeilen Optionen überprüfen.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Gibt es schon Kommandoteilen Parameter?</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Gibt es schon eine Logik für Kommandozeilen Parameter?<ul>
-<li>Ja, Klasse <code>ParametersImpl</code>.</label></li>
+<li class="task-list-item"><input type="checkbox" id="ac1fef99e9625816979188951d8bec9375fca9b7dc5e8e65294a0141c6367545"><label for="ac1fef99e9625816979188951d8bec9375fca9b7dc5e8e65294a0141c6367545"> Main-Methode auf Kommandozeilen Optionen überprüfen.</label></li>
+<li class="task-list-item"><input type="checkbox" id="2b34065f82943ab2e6c72de6995fb9f05a882ed360625131c6d39f306d257215"><label for="2b34065f82943ab2e6c72de6995fb9f05a882ed360625131c6d39f306d257215"> Gibt es schon Kommandoteilen Parameter?</label></li>
+<li>[ ] Gibt es schon eine Logik für Kommandozeilen Parameter?<ul>
+<li>Ja, Klasse <code>ParametersImpl</code>.</li>
 <li><a href="https://github.com/tobiashochguertel/pdfsam/blob/feature-84/pdfsam-gui/src/main/java/org/pdfsam/PdfsamApp.java#L107-114">org.pdfsam.PdfsamApp Zeile 107-114</a></li>
 </ul>
 </li>
-<li class="task-list-item"><input type="checkbox"><label> Kommandozeilen Hilfe <code>-h</code> planen.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Unit-Test für den Kommandozeilen <code>-h</code> programmieren.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Kommandozeilen Hilfe <code>-h</code> programmieren.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Methode finden, die eine Workspace Datei lädt.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Methode finden, die eine geladenen Workspace Sitzung ausführt (Run).</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Unit-Test für den Kommandozeilen <code>--workspace-file</code> planen. (Liste mit Tests)</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Unit-Test für den Kommandozeilen <code>--workspace-file</code> programmieren.</label></li>
-<li class="task-list-item"><input type="checkbox"><label> Main-Methode um Kommandozeilen Parameter <code>--workspace-file &lt;file&gt; Absolute Path to an existing workspace file.</code> erweitern.</label></li>
+<li class="task-list-item"><input type="checkbox" id="3bc2eab094ce067d81b7b22f3e71297cb983f3b800fc63afa313e483ea252972"><label for="3bc2eab094ce067d81b7b22f3e71297cb983f3b800fc63afa313e483ea252972"> Kommandozeilen Hilfe <code>-h</code> planen.</label></li>
+<li class="task-list-item"><input type="checkbox" id="7dc96e31a0f661d6977f4b87651ba6e308fb5f38600a144ebb3a6b3a1048cf8c"><label for="7dc96e31a0f661d6977f4b87651ba6e308fb5f38600a144ebb3a6b3a1048cf8c"> Unit-Test für den Kommandozeilen <code>-h</code> programmieren.</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbc42edb4bef3ab14780f37354ee245e4eebb5ea372d827c3be85826775b9fcf"><label for="cbc42edb4bef3ab14780f37354ee245e4eebb5ea372d827c3be85826775b9fcf"> Kommandozeilen Hilfe <code>-h</code> programmieren.</label></li>
+<li class="task-list-item"><input type="checkbox" id="8a4220a0a17c21204213f2ceb36e2d5607096f7100d4bfdec99a7d93bc8c82dd"><label for="8a4220a0a17c21204213f2ceb36e2d5607096f7100d4bfdec99a7d93bc8c82dd"> Methode finden, die eine Workspace Datei lädt.</label></li>
+<li class="task-list-item"><input type="checkbox" id="991ea2a7ed30381d699cb1304dcd9b01ce223ef8f71126fdd2a5e17e0e6aceac"><label for="991ea2a7ed30381d699cb1304dcd9b01ce223ef8f71126fdd2a5e17e0e6aceac"> Methode finden, die eine geladenen Workspace Sitzung ausführt (Run).</label></li>
+<li class="task-list-item"><input type="checkbox" id="a9a50e47c0ba94bc7cccb489b8eb1decec9dfd4c49b085416bc228075e2d71d9"><label for="a9a50e47c0ba94bc7cccb489b8eb1decec9dfd4c49b085416bc228075e2d71d9"> Unit-Test für den Kommandozeilen <code>--workspace-file</code> planen. (Liste mit Tests)</label></li>
+<li class="task-list-item"><input type="checkbox" id="98b23872bb21005703c60e1e1e27fb443f4a576172f46b9fa1f9b4f853708b28"><label for="98b23872bb21005703c60e1e1e27fb443f4a576172f46b9fa1f9b4f853708b28"> Unit-Test für den Kommandozeilen <code>--workspace-file</code> programmieren.</label></li>
+<li class="task-list-item"><input type="checkbox" id="c1e17a6ceed4646c3fdf026640a93919437c54f1e30934ab111d3919eab33e63"><label for="c1e17a6ceed4646c3fdf026640a93919437c54f1e30934ab111d3919eab33e63"> Main-Methode um Kommandozeilen Parameter <code>--workspace-file &lt;file&gt; Absolute Path to an existing workspace file.</code> erweitern.</label></li>
 </ul>
         </article>
       </div>

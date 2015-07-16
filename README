@@ -15,8 +15,25 @@ Markdown-Checklists is forked from [Markdown Checklist](https://github.com/FND/m
 ## Additional Features
 
 * MakeFile provides task to create for Sublime-Text 3 Plugin [OmniMarkupPreviewer](https://github.com/timonwong/OmniMarkupPreviewer) an Markdown-Renderer extension with additonal template files.
-* Class Attribute for `<ul>`-Tag for Checklists.
-* Class Attribute for `<li>`-Tag of Checklists.
+* `class` attribute for `<ul>`-Tag for Checklists.
+* `class` attribute for `<li>`-Tag of Checklists.
+* Genearting key (hash) for each checkpoint text, using hash to make checklist check"ed" able.
+* `id` attribute for `<input>`-Tag of Checklists.
+* `for` attribute for `<label>`-Tag of Checklists.
+
+## Example HTML Output
+
+```
+h1>Hello World</h1>
+<ul class="checklist">
+<li class="task-list-item"><input type="checkbox" id="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c"><label for="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c"> foo</label></li>
+<li class="task-list-item"><input type="checkbox" id="375719a43941c6a5e7f957c74b6f1d7e20cfefd0040181aaf6d3074c8eaac311" checked><label for="375719a43941c6a5e7f957c74b6f1d7e20cfefd0040181aaf6d3074c8eaac311"> bar</label></li>
+<li class="task-list-item"><input type="checkbox" id="7d80d75283fdbf2a3d8a0e2eed45e9d844d1a7482372cd8bc59581725373c179"><label for="7d80d75283fdbf2a3d8a0e2eed45e9d844d1a7482372cd8bc59581725373c179"> baz</label></li>
+<li class="task-list-item"><input type="checkbox"></li>
+<li class="task-list-item"><input type="checkbox" checked></li>
+</ul>
+<p>lorem ipsum</p>
+```
 
 ## Installation
 
