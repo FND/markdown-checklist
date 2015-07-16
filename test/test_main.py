@@ -14,20 +14,10 @@ Hello World
 * [ ] baz
 * [ ]
 * [x]
-* [ ] Der Unit-Test `contextMenuReplacesText` wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: `X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java`
+* [ ] Der Unit-Test `contextMenuReplacesText` wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: `X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java`
 
 lorem ipsum
     """.strip()
-
-    print("\n")
-    print(source)
-    print("\n")
-
-    print("\n")
-    print(type(source))
-    print(repr(source))
-    print("\n")
-
 
     html = markdown(source)
     assert html == r"""
@@ -38,7 +28,7 @@ lorem ipsum
 <li>[ ] baz</li>
 <li>[ ]</li>
 <li>[x]</li>
-<li>[ ] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
+<li>[ ] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
@@ -51,7 +41,7 @@ lorem ipsum
 <li class="task-list-item"><input type="checkbox" id="7d80d75283fdbf2a3d8a0e2eed45e9d844d1a7482372cd8bc59581725373c179"><label for="7d80d75283fdbf2a3d8a0e2eed45e9d844d1a7482372cd8bc59581725373c179"> baz</label></li>
 <li class="task-list-item"><input type="checkbox"></li>
 <li class="task-list-item"><input type="checkbox" checked></li>
-<li class="task-list-item"><input type="checkbox" id="11d23cf018de6e2936e7f4376b246b436b3334aaa492d13f7aa6270216dee55e"><label for="11d23cf018de6e2936e7f4376b246b436b3334aaa492d13f7aa6270216dee55e"> Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="b10c83b54636ea0620ff6d9e9efb9c034205e0d833d0f9a808657caf3aa2a31e"><label for="b10c83b54636ea0620ff6d9e9efb9c034205e0d833d0f9a808657caf3aa2a31e"> Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></label></li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
@@ -120,7 +110,7 @@ def test_realworld_example():
     source = r"""
 **09.07.2015 - Getting Startet:**
 
- - [] Der Unit-Test `contextMenuReplacesText` wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: `X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java`
+ - [] Der Unit-Test `contextMenuReplacesText` wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: `X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java`
  - [X] Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (`mvn exec:java`). Weiterer Schritt nötig um Parent Pom lokal zu installieren: `cd pdfsam-parent && mvn install`, bevor pdfsam-community gestartet werden kann.
  - [ ] Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: `mvn clean install -Dmaven.test.skip=true && cd pdfsam-parent/ && mvn install && cd .. && cd pdfsam-community && mvn exec:java`
 
@@ -130,7 +120,7 @@ def test_realworld_example():
     assert html == r"""
 <p><strong>09.07.2015 - Getting Startet:</strong></p>
 <ul>
-<li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
+<li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
 <li>[X] Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt nötig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</li>
 <li>[ ] Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></li>
 </ul>
@@ -141,7 +131,7 @@ def test_realworld_example():
     assert html == r"""
 <p><strong>09.07.2015 - Getting Startet:</strong></p>
 <ul>
-<li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
+<li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
 <li class="task-list-item"><input type="checkbox" id="26703b3e4519a2ab24f5e1436367e6ecdcff46964278f6456ec5530dda4ee772" checked><label for="26703b3e4519a2ab24f5e1436367e6ecdcff46964278f6456ec5530dda4ee772"> Parent Pom wird nicht gefunden beim starten der pdfsam-community variante. (<code>mvn exec:java</code>). Weiterer Schritt nötig um Parent Pom lokal zu installieren: <code>cd pdfsam-parent &amp;&amp; mvn install</code>, bevor pdfsam-community gestartet werden kann.</label></li>
 <li class="task-list-item"><input type="checkbox" id="2e265eca17bd1470a09518ebe6fa9605a08101e1a90a44a13456fc7717bd49f1"><label for="2e265eca17bd1470a09518ebe6fa9605a08101e1a90a44a13456fc7717bd49f1"> Neuer vollständiger Befehl um das Projekt zu bauen, im lokalen maven repository zu installieren und pdf-sam community zu starten: <code>mvn clean install -Dmaven.test.skip=true &amp;&amp; cd pdfsam-parent/ &amp;&amp; mvn install &amp;&amp; cd .. &amp;&amp; cd pdfsam-community &amp;&amp; mvn exec:java</code></label></li>
 </ul>

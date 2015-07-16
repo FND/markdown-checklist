@@ -1,5 +1,8 @@
 ## Tools und deren Optionen
-PYTHON     = /cygdrive/d/Applications/Python/Python34/python.exe
+#PYTHON     = /cygdrive/d/Applications/Python/Python34/python.exe
+PYTHON     = /usr/bin/python
+#PYTEST     = /cygdrive/d/Applications/Python/Python34/Scripts/py.test.exe
+PYTEST     = /cygdrive/d/Applications/Python/Python34/Scripts/py.test-2.7.exe
 OMNIMARKUPPREVIEWER_INSTALL_PATH_WINDOWS = "$(APPDATA)\Sublime Text 3\Packages\OmniMarkupPreviewer"
 OMNIMARKUPPREVIEWER_INSTALL_PATH = `/usr/bin/cygpath.exe -ua $(OMNIMARKUPPREVIEWER_INSTALL_PATH_WINDOWS)`
 
