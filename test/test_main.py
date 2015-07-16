@@ -1,11 +1,11 @@
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 from markdown import markdown
 
 from markdown_checklists.extension import ChecklistsExtension
 
 
 def test_checklists():
-    source = ur"""
+    source = r"""
 Hello World
 ===========
 
@@ -19,8 +19,18 @@ Hello World
 lorem ipsum
     """.strip()
 
+    print("\n")
+    print(source)
+    print("\n")
+
+    print("\n")
+    print(type(source))
+    print(repr(source))
+    print("\n")
+
+
     html = markdown(source)
-    assert html == ur"""
+    assert html == r"""
 <h1>Hello World</h1>
 <ul>
 <li>[ ] foo</li>
@@ -33,7 +43,7 @@ lorem ipsum
 <p>lorem ipsum</p>
     """.strip()
 
-    expected = ur"""
+    expected = r"""
 <h1>Hello World</h1>
 <ul class="checklist">
 <li class="task-list-item"><input type="checkbox" id="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c"><label for="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c"> foo</label></li>
@@ -66,7 +76,7 @@ lorem ipsum
     """.strip()
 
     html = markdown(source, extensions=[ChecklistsExtension()])
-    assert html == ur"""
+    assert html == r"""
 <h1>Hello World</h1>
 <ul class="checklist">
 <li class="task-list-item"><input type="checkbox" id="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c" checked><label for="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c"> foo</label></li>
@@ -78,7 +88,7 @@ lorem ipsum
 
 
 def test_class():
-    source = ur"""
+    source = r"""
 * [x] foo
 * [ ] bar
 * [X] baz
@@ -91,7 +101,7 @@ def test_class():
     """.strip()
 
     html = markdown(source, extensions=[ChecklistsExtension()])
-    assert html == ur"""
+    assert html == r"""
 <ul class="checklist">
 <li class="task-list-item"><input type="checkbox" id="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c" checked><label for="ca052d1d7e0a2f787f4ef9937840dcf91e647b08b208df4bbce2e78d527a4f8c"> foo</label></li>
 <li class="task-list-item"><input type="checkbox" id="375719a43941c6a5e7f957c74b6f1d7e20cfefd0040181aaf6d3074c8eaac311"><label for="375719a43941c6a5e7f957c74b6f1d7e20cfefd0040181aaf6d3074c8eaac311"> bar</label></li>
@@ -107,7 +117,7 @@ def test_class():
 
 
 def test_realworld_example():
-    source = ur"""
+    source = r"""
 **09.07.2015 - Getting Startet:**
 
  - [] Der Unit-Test `contextMenuReplacesText` wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: `X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java`
@@ -117,7 +127,7 @@ def test_realworld_example():
     """.strip()
 
     html = markdown(source)
-    assert html == ur"""
+    assert html == r"""
 <p><strong>09.07.2015 - Getting Startet:</strong></p>
 <ul>
 <li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
@@ -128,7 +138,7 @@ def test_realworld_example():
 
 
     html = markdown(source, extensions=[ChecklistsExtension()])
-    assert html == ur"""
+    assert html == r"""
 <p><strong>09.07.2015 - Getting Startet:</strong></p>
 <ul>
 <li>[] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausführung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
