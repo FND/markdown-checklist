@@ -54,7 +54,7 @@ dist: clean test
 
 readme: example-html
 	$(PYTHON) -c "import markdown_checklists as cl; print(cl.__doc__.strip())" > README
-	sed -i "2i[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklists.svg?branch=v0.5.1)](https://travis-ci.org/tobiashochguertel/markdown-checklists)" README
+	sed -i "2i[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklists.svg?branch=master)](https://travis-ci.org/tobiashochguertel/markdown-checklists)" README
 	sed -i "3i<!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->" README
 
 example-html:

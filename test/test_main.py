@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from markdown import markdown
 
 from markdown_checklists.extension import ChecklistsExtension
