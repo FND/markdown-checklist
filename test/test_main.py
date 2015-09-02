@@ -15,6 +15,10 @@ Hello World
 * [ ]
 * [x]
 * [ ] Der Unit-Test `contextMenuReplacesText` wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: `X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java`
+* [ ] What do you know about Magnolia configuration?
++ * [ ] Do you know about the magnolia repository and workspaces?
++ * [ ] Do you understand the Node2Bean mechanism?
++ * [ ] Do you the know the relationship between nodes and properties?
 
 lorem ipsum
     """.strip()
@@ -29,6 +33,22 @@ lorem ipsum
 <li>[ ]</li>
 <li>[x]</li>
 <li>[ ] Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></li>
+<li>[ ] What do you know about Magnolia configuration?</li>
+<li>
+<ul>
+<li>[ ] Do you know about the magnolia repository and workspaces?</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>[ ] Do you understand the Node2Bean mechanism?</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>[ ] Do you the know the relationship between nodes and properties?</li>
+</ul>
+</li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
@@ -42,6 +62,22 @@ lorem ipsum
 <li class="task-list-item"><input type="checkbox"></li>
 <li class="task-list-item"><input type="checkbox" checked></li>
 <li class="task-list-item"><input type="checkbox" id="b10c83b54636ea0620ff6d9e9efb9c034205e0d833d0f9a808657caf3aa2a31e"><label for="b10c83b54636ea0620ff6d9e9efb9c034205e0d833d0f9a808657caf3aa2a31e"> Der Unit-Test <code>contextMenuReplacesText</code> wurde auskommentiert um die ausfuehrung zu verhindern. Dieser Test funktioniert in meiner Umgebung nicht wie erwachtet. (Tastatur Layout?, Aktivierte Sprache des Betriebsystems?) Datei: <code>X:\pdfsam\pdfsam-fx\src\test\java\org\pdfsam\ui\prefix\PrefixFieldTest.java</code></label></li>
+<li class="task-list-item"><input type="checkbox" id="c7eea1db1eefd672c4679fffeb4e62d8206294d74ae902ec005e169046802bec"><label for="c7eea1db1eefd672c4679fffeb4e62d8206294d74ae902ec005e169046802bec"> What do you know about Magnolia configuration?</label></li>
+<li>
+<ul class="checklist">
+<li class="task-list-item"><input type="checkbox" id="7716b5f69afb42dbcdfeb8bd1bee8d536e98230778640278e44c45a49de416d6"><label for="7716b5f69afb42dbcdfeb8bd1bee8d536e98230778640278e44c45a49de416d6"> Do you know about the magnolia repository and workspaces?</label></li>
+</ul>
+</li>
+<li>
+<ul class="checklist">
+<li class="task-list-item"><input type="checkbox" id="7e6d9c269c7243dd2282bae628b3c27e888784fe638586a5e0d2cadc084ab10d"><label for="7e6d9c269c7243dd2282bae628b3c27e888784fe638586a5e0d2cadc084ab10d"> Do you understand the Node2Bean mechanism?</label></li>
+</ul>
+</li>
+<li>
+<ul class="checklist">
+<li class="task-list-item"><input type="checkbox" id="68cfd25f74d33f39efffd08f83eafe89299e8c2cce1ff486ab611a90022e7674"><label for="68cfd25f74d33f39efffd08f83eafe89299e8c2cce1ff486ab611a90022e7674"> Do you the know the relationship between nodes and properties?</label></li>
+</ul>
+</li>
 </ul>
 <p>lorem ipsum</p>
     """.strip()
