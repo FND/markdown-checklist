@@ -1,6 +1,5 @@
+"""
 [Markdown Checklists](https://github.com/tobiashochguertel/markdown-checklists)
-[![Build Status](https://travis-ci.org/tobiashochguertel/markdown-checklists.svg?branch=master)](https://travis-ci.org/tobiashochguertel/markdown-checklists)
-<!--[![coverage](https://coveralls.io/repos/FND/markdown-checklist/badge.png)](https://coveralls.io/r/FND/markdown-checklist)-->
 
 a [Python Markdown](http://pythonhosted.org/Markdown/) extension for lists of
 tasks with checkboxes inspured by [GitHub task lists](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments).
@@ -72,3 +71,8 @@ There is also a small JavaScript/jQuery library to make checkboxes interactive:
     });
 
 See included `checklists.js` for details.
+"""
+
+__version__ = '0.6.3'
+__author__ = 'Tobias Hochguertel, FND'
+__license__ = 'MIT'
