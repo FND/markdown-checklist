@@ -32,7 +32,10 @@ class ChecklistPostprocessor(Postprocessor):
         after = before.replace('<ul>', '<ul class="checklist">')
         return html.replace(before, after)
 
+    def render_checkbox(self, checked):
+        checked = ' checked' if checked else ''
+        return '<li><input type="checkbox" disabled%s>' % checked
+
     def _convert_checkbox(self, match):
         state = match.group(1)
-        checked = ' checked' if state != ' ' else ''
-        return '<li><input type="checkbox" disabled%s>' % checked
+        return self.render_checkbox(state != ' ')
