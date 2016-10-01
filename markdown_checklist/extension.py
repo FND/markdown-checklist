@@ -30,23 +30,25 @@ class ChecklistPostprocessor(Postprocessor):
     adds checklist class to list element
     """
 
-    pattern = re.compile(r'<li>\[([ Xx])\]')
+    list_pattern = re.compile(r'(<ul>\n<li>\[[ Xx]\])')
+    item_pattern = re.compile(r'^<li>\[([ Xx])\](.*)</li>$', re.MULTILINE)
 
     def __init__(self, render_item, *args, **kwargs):
         self.render_item = render_item
         super(ChecklistPostprocessor, self).__init__(*args, **kwargs)
 
     def run(self, html):
-        html = re.sub(self.pattern, self._convert_checkbox, html)
-        before = '<ul>\n<li><input type="checkbox"'
-        after = before.replace('<ul>', '<ul class="checklist">')
-        return html.replace(before, after)
+        html = re.sub(self.list_pattern, self._convert_list, html)
+        return re.sub(self.item_pattern, self._convert_item, html)
 
-    def _convert_checkbox(self, match):
-        state = match.group(1)
-        return self.render_item(state != ' ')
+    def _convert_list(self, match):
+        return match.group(1).replace("<ul>", '<ul class="checklist">')
+
+    def _convert_item(self, match):
+        state, caption = match.groups()
+        return self.render_item(caption, state != ' ')
 
 
-def render_item(checked):
+def render_item(caption, checked):
     checked = ' checked' if checked else ''
-    return '<li><input type="checkbox" disabled%s>' % checked
+    return '<li><input type="checkbox" disabled%s>%s</li>' % (checked, caption)
