@@ -17,6 +17,18 @@ def test_checklists():
     """.strip()
 
     expected = """
+<ul class="check-list">
+<li><input type="checkbox" disabled> foo</li>
+<li><input type="checkbox" disabled checked> bar</li>
+<li><input type="checkbox" disabled> baz</li>
+</ul>
+    """.strip()
+
+    html = markdown(source,
+            extensions=[ChecklistExtension(list_class="check-list")])
+    assert html == expected
+
+    expected = """
 <ul class="checklist">
 <li><label><input type="checkbox" disabled> foo</label></li>
 <li><label><input type="checkbox" disabled checked> bar</label></li>
