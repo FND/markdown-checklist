@@ -24,7 +24,7 @@ class ChecklistPostprocessor(Postprocessor):
     adds checklist class to list element
     """
 
-    pattern = re.compile(r'<li>\[([ Xx])\]')
+    pattern = re.compile(r'<li>(?:\n<p>)?\[([ Xx])\]')
 
     def run(self, html):
         html = re.sub(self.pattern, self._convert_checkbox, html)
