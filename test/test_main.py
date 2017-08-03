@@ -94,3 +94,31 @@ def test_class():
 <li><input type="checkbox" disabled> ...</li>
 </ul>
     """.strip()
+
+
+def test_newline_in_list():
+    source = """
+- [ ] Foo
+
+- [ ] Bar
+
+    - [ ] Baz
+
+- [ ] lorem
+    """.strip()
+
+    html = markdown(source, extensions=[ChecklistExtension()])
+    assert html == """
+<ul class="checklist">
+<li><input type="checkbox" disabled> Foo</p>
+</li>
+<li><input type="checkbox" disabled> Bar</p>
+<ul class="checklist">
+<li><input type="checkbox" disabled> Baz</li>
+</ul>
+</li>
+<li><input type="checkbox" disabled> lorem</p>
+</li>
+</ul>
+
+    """.strip()
