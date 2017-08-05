@@ -16,15 +16,15 @@ class ChecklistExtension(Extension):
 
     def __init__(self, **kwargs):
         self.config = {
-            "list_class": ["checklist",
-                    "class name to add to the list element"],
-            "render_item": [render_item, "custom function to render items"]
+            'list_class': ['checklist',
+                    'class name to add to the list element'],
+            'render_item': [render_item, 'custom function to render items']
         }
         super(ChecklistExtension, self).__init__(**kwargs)
 
     def extendMarkdown(self, md, md_globals):
-        list_class = self.getConfig("list_class")
-        renderer = self.getConfig("render_item")
+        list_class = self.getConfig('list_class')
+        renderer = self.getConfig('render_item')
         postprocessor = ChecklistPostprocessor(list_class, renderer, md)
         md.postprocessors.add('checklist', postprocessor, '>raw_html')
 
@@ -47,7 +47,7 @@ class ChecklistPostprocessor(Postprocessor):
         return re.sub(self.item_pattern, self._convert_item, html)
 
     def _convert_list(self, match):
-        return match.group(1).replace("<ul>",
+        return match.group(1).replace('<ul>',
                 '<ul class="%s">' % self.list_class)
 
     def _convert_item(self, match):
