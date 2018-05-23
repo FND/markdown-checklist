@@ -33,7 +33,7 @@ Installation
 Usage
 -----
 
-    import markdown
+    import markdown, markdown_checklist
     html = markdown.markdown(source, extensions=['markdown_checklist.extension'])
 
 or
