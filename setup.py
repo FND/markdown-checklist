@@ -14,6 +14,7 @@ META = {
     'version': VERSION,
     'description': 'Python Markdown extension for task lists with checkboxes',
     'long_description': DESC.strip(),
+    'long_description_content_type': 'text/markdown',
     'license': LICENSE,
     'author': AUTHOR,
     'author_email': '',

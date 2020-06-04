@@ -1,14 +1,12 @@
 .PHONY: release dist readme test lint coverage clean
 
-release: readme clean test
+release: readme dist
 	git diff --exit-code # ensure there are no uncommitted changes
 	git tag -a \
 			-m v`python -c 'import markdown_checklist; print(markdown_checklist.__version__)'` \
 			v`python -c 'import markdown_checklist; print(markdown_checklist.__version__)'`
 	git push origin master --tags
-	# XXX: duplicates dist target
-	rm -r dist || true
-	python setup.py sdist upload
+	twine upload dist/*
 
 dist: clean test
 	rm -r dist || true
