@@ -35,7 +35,8 @@ class ChecklistPostprocessor(Postprocessor):
     """
 
     list_pattern = re.compile(r'(<ul>\n<li>\[[ Xx]\])')
-    item_pattern = re.compile(r'^<li>\[([ Xx])\](.*)</li>$', re.MULTILINE)
+    item_pattern = re.compile(r'^<li>\[([ Xx])\](.*?)</li>$',
+                              re.DOTALL | re.MULTILINE)
 
     def __init__(self, list_class, render_item, *args, **kwargs):
         self.list_class = list_class
