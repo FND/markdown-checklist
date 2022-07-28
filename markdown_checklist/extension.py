@@ -22,11 +22,11 @@ class ChecklistExtension(Extension):
         }
         super(ChecklistExtension, self).__init__(**kwargs)
 
-    def extendMarkdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals=None):
         list_class = self.getConfig('list_class')
         renderer = self.getConfig('render_item')
         postprocessor = ChecklistPostprocessor(list_class, renderer, md)
-        md.postprocessors.add('checklist', postprocessor, '>raw_html')
+        md.postprocessors.register(postprocessor, 'checklist', 50)
 
 
 class ChecklistPostprocessor(Postprocessor):
